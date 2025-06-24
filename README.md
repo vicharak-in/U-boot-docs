@@ -30,10 +30,18 @@ The Axon U-Boot supports booting from the following storage devices:
 
 Note : Raw image can be used in SD Card, NVMe and USB Storage Media device.
 
+
+Uncompressed Image
+------------------
+
+```bash
+tar -xvf <download_image.tar.gz>
+```
+
 ### Flashing to eMMC
 
 Refer to the detailed guide:
-**[eMMC Flashing Guide (Vicharak Docs)](https://vicharak.docs/emmc)**
+**[eMMC Flashing Guide (Vicharak Docs)](https://docs.vicharak.in/vicharak_sbcs/axon/axon-linux/linux-usage-guide/)**
 
 ### Flashing to NVMe SSD
 
@@ -107,6 +115,10 @@ If the keyboard is disconnected after power-on, it will not reconnect. Reboot wi
 * **Shift + D**: Set the selected device as the default boot source for future boots
 
 (Only one USB storage device is supported for booting via the boot menu.)
+
+**Note:** When user have not selected boot devices from Boot Menu ``( Ctrl + Q )``, Default device is ``NVMe``.
+
+---
 
 ### Accessing the U-Boot Console
 
