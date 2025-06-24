@@ -99,6 +99,7 @@ e2fsck 1.46.2 (28-Feb-2021)
 
 **Caution**: If `fsck` reports serious errors or can't read the partition or recover from, recheck your `dd` command or reflash the image.
 
+---
 
 ### First Boot Behavior
 
