@@ -81,6 +81,25 @@ Device          Start     End     Sectors   Size Type
 /dev/<device>6 2195456 13420510 11225055   5.4G  Linux filesystem
 ```
 
+#### Check Root Filesystem with `fsck`
+
+The root partition is typically the **6th partition** (e.g., `/dev/sdX6` or `/dev/nvme0n1p6`).
+
+```bash
+sudo fsck -f /dev/<device>6
+```
+
+You should see output like:
+
+```
+fsck from util-linux 2.37
+e2fsck 1.46.2 (28-Feb-2021)
+/dev/sdb6: clean, 12345/456789 files, 78901/7890123 blocks
+```
+
+**Caution**: If `fsck` reports serious errors or can't read the partition or recover from, recheck your `dd` command or reflash the image.
+
+
 ### First Boot Behavior
 
 When booting from a newly flashed storage device, Axon will perform an initial setup (first boot configuration) and then automatically reboot.
