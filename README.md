@@ -72,6 +72,18 @@ Device          Start     End     Sectors   Size Type
 /dev/<device>5 1671168  2195455   524288   256M  Linux filesystem
 /dev/<device>6 2195456 13420510 11225055   5.4G  Linux filesystem
 ```
+
+### First Boot Behavior
+
+When booting from a newly flashed storage device, Axon will perform an initial setup (first boot configuration) and then automatically reboot.
+
+**Important:** After the reboot, Axon will not automatically boot from the same storage device unless it has been explicitly set as the default. Simply selecting the device once from the boot menu does not persist across reboots.
+
+To ensure Axon boots from the same storage medium after first boot:
+
+* Either **reselect** the storage device from the boot menu after reboot, or
+* **Set it as the default** before the first boot, so it will be used automatically after reboot.
+
 ---
 
 ## Accessing Boot Menu and U-Boot Console
@@ -82,8 +94,6 @@ Device          Start     End     Sectors   Size Type
 * **USB keyboard** connected **before** powering on the device
 
 If the keyboard is disconnected after power-on, it will not reconnect. Reboot with the keyboard connected to resolve this.
-
----
 
 ### Accessing the Boot Menu
 
@@ -97,8 +107,6 @@ If the keyboard is disconnected after power-on, it will not reconnect. Reboot wi
 * **Shift + D**: Set the selected device as the default boot source for future boots
 
 (Only one USB storage device is supported for booting via the boot menu.)
-
----
 
 ### Accessing the U-Boot Console
 
