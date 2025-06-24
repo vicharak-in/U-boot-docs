@@ -92,8 +92,6 @@ To ensure Axon boots from the same storage medium after first boot:
 * Either **reselect** the storage device from the boot menu after reboot, or
 * **Set it as the default** before the first boot, so it will be used automatically after reboot.
 
----
-
 ### Unique PARTUUID Enforcement on First Boot
 
 On first boot, all Axon OS images are shipped with the **same root filesystem `PARTUUID`**. This ID is used by the Linux kernel to locate and mount the root filesystem.
