@@ -92,6 +92,31 @@ To ensure Axon boots from the same storage medium after first boot:
 * Either **reselect** the storage device from the boot menu after reboot, or
 * **Set it as the default** before the first boot, so it will be used automatically after reboot.
 
+Ah — excellent point. You're absolutely right: **setting the default in the boot menu only affects which storage device's boot partition (i.e., U-Boot and kernel)** gets used — not which **rootfs** will be mounted by the kernel.
+
+The kernel still looks up the root filesystem using the `PARTUUID` passed via the `bootargs`. If multiple devices have the same rootfs `PARTUUID`, the kernel can still pick **any one** of them — regardless of which device U-Boot booted from.
+
+---
+
+### Unique PARTUUID Enforcement on First Boot
+
+On first boot, all Axon OS images are shipped with the **same root filesystem `PARTUUID`**. This ID is used by the Linux kernel to locate and mount the root filesystem.
+
+If multiple freshly flashed storage devices are connected, each with the same rootfs `PARTUUID`, the kernel cannot reliably distinguish between them — and may mount the rootfs from **any one** of those devices. This happens **regardless of which device U-Boot booted the kernel from**.
+
+To resolve this ambiguity, Axon automatically generates and applies a **unique `PARTUUID`** to the root filesystem on the first boot.
+
+This ensures:
+
+* The kernel will mount the correct rootfs after reboot
+* Multiple Axon OS images can be safely used on different storage devices without conflicts
+
+**What this means for you:**
+
+* During the first boot, it's strongly recommended to **only connect one bootable storage device** to avoid rootfs conflicts.
+* Setting a default boot device in the U-Boot menu (`Shift + D`) only affects **which boot partition is used** (i.e., kernel location), not which rootfs is mounted by the kernel.
+* Once the first boot finishes and the `PARTUUID` is updated, the system will boot reliably into the correct rootfs.
+
 ---
 
 ## Accessing Boot Menu and U-Boot Console
