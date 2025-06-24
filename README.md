@@ -92,10 +92,6 @@ To ensure Axon boots from the same storage medium after first boot:
 * Either **reselect** the storage device from the boot menu after reboot, or
 * **Set it as the default** before the first boot, so it will be used automatically after reboot.
 
-Ah — excellent point. You're absolutely right: **setting the default in the boot menu only affects which storage device's boot partition (i.e., U-Boot and kernel)** gets used — not which **rootfs** will be mounted by the kernel.
-
-The kernel still looks up the root filesystem using the `PARTUUID` passed via the `bootargs`. If multiple devices have the same rootfs `PARTUUID`, the kernel can still pick **any one** of them — regardless of which device U-Boot booted from.
-
 ---
 
 ### Unique PARTUUID Enforcement on First Boot
