@@ -24,6 +24,12 @@ The Axon U-Boot supports booting from the following storage devices:
 
 **Caution**: Be sure to use the correct device path (e.g., `/dev/sdX`, `/dev/nvme0n1`) to avoid overwriting important data.
 
+[Download eMMC Image](https://drive.google.com/file/d/1BYcnlJjHHNbGBsgnQMTn5ydN8Gc7QB-e/view?usp=drive_link)
+
+[Download Raw Image](https://drive.google.com/file/d/1Zz_FKpvpcDQBfyncV0C8VQCTakyDlAzD/view?usp=drive_link)
+
+Note : Raw image can be used in SD Card, NVMe and USB Storage Media device.
+
 ### Flashing to eMMC
 
 Refer to the detailed guide:
