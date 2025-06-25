@@ -149,6 +149,9 @@ If the keyboard is disconnected after power-on, it will not reconnect. Reboot wi
 
 #### Boot Menu Navigation
 
+![Boot-Menu](boot-menu.png)
+
+
 * **Arrow keys**: Select the desired boot device (USB, NVMe, SD Card, eMMC)
 * **Enter**: Boot from the selected device
 * **Shift + D**: Set the selected device as the default boot source for future boots
